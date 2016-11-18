@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using static Books.CLRS.Part7.Ch27_MultithreadAlgorithms.S01_BasicsOfDynamicMultithreading.SimpleFibonacci;
+using static Books.CLRS.Ch27.DynamicMultithreadingBasics.SimpleFibonacci;
 
-namespace Books.CLRS.Part7.Ch27_MultithreadAlgorithms.S01_BasicsOfDynamicMultithreading.Tests {
+namespace Books.CLRS.Ch27.DynamicMultithreadingBasics.Tests {
     [TestFixture]
     class SimpleFibonacciTests {
         [Test]

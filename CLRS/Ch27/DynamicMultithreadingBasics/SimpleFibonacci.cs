@@ -1,4 +1,4 @@
-﻿namespace Books.CLRS.Part7.Ch27_MultithreadAlgorithms.S01_BasicsOfDynamicMultithreading {
+﻿namespace Books.CLRS.Ch27.DynamicMultithreadingBasics {
     public static class SimpleFibonacci {
         public static int Fib(int n) {
             if (n <= 1) {

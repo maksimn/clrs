@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CLRS\Part7\Ch27_MultithreadAlgorithms\S01_BasicsOfDynamicMultithreading\SimpleFibonacci.cs" />
-    <Compile Include="CLRS\Part7\Ch27_MultithreadAlgorithms\S01_BasicsOfDynamicMultithreading\Tests\SimpleFibonacciTests.cs" />
+    <Compile Include="CLRS\Ch27\DynamicMultithreadingBasics\SimpleFibonacci.cs" />
+    <Compile Include="CLRS\Ch27\DynamicMultithreadingBasics\Tests\SimpleFibonacciTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
