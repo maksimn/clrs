@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLRS\Ch10\Trees\BinaryTree.cs" />
+    <Compile Include="CLRS\Ch10\Trees\BinaryTreeNode.cs" />
+    <Compile Include="CLRS\Ch10\Trees\Tests\BinaryTreeTests.cs" />
     <Compile Include="CLRS\Ch27\DynamicMultithreadingBasics\SimpleFibonacci.cs" />
     <Compile Include="CLRS\Ch27\DynamicMultithreadingBasics\Tests\SimpleFibonacciTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
