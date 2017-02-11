@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using NUnit.Framework;
 
@@ -44,19 +45,22 @@ namespace Books.CLRS.Ch10.Trees.Tests {
 
             binaryTree.TraverseRecursive(node => nodeList.Add(node));
 
-            Assert.IsTrue(
-                nodeList.Count == 10 &&
-                nodeList.Exists(node => node.Key == 18) &&
-                nodeList.Exists(node => node.Key == 12) &&
-                nodeList.Exists(node => node.Key == 10) &&
-                nodeList.Exists(node => node.Key == 7) &&
-                nodeList.Exists(node => node.Key == 4) &&
-                nodeList.Exists(node => node.Key == 2) &&
-                nodeList.Exists(node => node.Key == 21) &&
-                nodeList.Exists(node => node.Key == 5) &&
-                nodeList.Exists(node => node.Key == 15) &&
-                nodeList.Exists(node => node.Key == 14)
-            );
+            Assert.AreEqual(10, nodeList.Count);
+            Assert.IsTrue(nodeList.Exists(node => node.Key == 18));
+            Assert.IsTrue(nodeList.Exists(node => node.Key == 12));
+            Assert.IsTrue(nodeList.Exists(node => node.Key == 10));
+            Assert.IsTrue(nodeList.Exists(node => node.Key == 7));
+            Assert.IsTrue(nodeList.Exists(node => node.Key == 4));
+            Assert.IsTrue(nodeList.Exists(node => node.Key == 2));
+            Assert.IsTrue(nodeList.Exists(node => node.Key == 21));
+            Assert.IsTrue(nodeList.Exists(node => node.Key == 5));
+            Assert.IsTrue(nodeList.Exists(node => node.Key == 15));
+            Assert.IsTrue(nodeList.Exists(node => node.Key == 14));
+        }
+
+        [Test]
+        public void TraverseRecursive_actionParameterIsNull_ThrowsException() {
+            Assert.Catch<ArgumentException>(() => binaryTree.TraverseRecursive(null));
         }
     }
 }
