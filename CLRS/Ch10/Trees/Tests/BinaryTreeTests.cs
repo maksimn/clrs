@@ -20,23 +20,27 @@ namespace Books.CLRS.Ch10.Trees.Tests {
             //      key = 5
             //      /     \
             // key = 15 key = 14
-            binaryTree = new BinaryTree();
+            var rootNode = new BinaryTreeNode(18, null);
+            var nodeKey12 = new BinaryTreeNode(12, null);            
+            var nodeKey10 = new BinaryTreeNode(10, null);            
+            var nodeKey7 = new BinaryTreeNode(7, null);
+            var nodeKey4 = new BinaryTreeNode(4, null);
+            var nodeKey2 = new BinaryTreeNode(2, null);
+            var nodeKey21 = new BinaryTreeNode(21, null);
+            var nodeKey5 = new BinaryTreeNode(5, null);
+            var nodeKey15 = new BinaryTreeNode(15, null);
+            var nodeKey14 = new BinaryTreeNode(14, null);
 
-            var root = binaryTree.CreateRoot(18);
-
-            var leftSubNode = root.AppendLeftNode(12);
-            var rightSubNode = root.AppendRightNode(10);
-
-            var nodeKey7 = leftSubNode.AppendLeftNode(7);
-            var nodeKey4 = leftSubNode.AppendRightNode(4);
-
-            var nodeKey2 = rightSubNode.AppendLeftNode(2);
-            var nodeKey21 = rightSubNode.AppendRightNode(21);
-
-            var nodeKey5 = nodeKey4.AppendLeftNode(5);
-
-            var nodeKey15 = nodeKey5.AppendLeftNode(15);
-            var nodeKey14 = nodeKey5.AppendRightNode(14);
+            binaryTree = new BinaryTree(rootNode);
+            binaryTree.AppendLeftNode(rootNode, nodeKey12);
+            binaryTree.AppendRightNode(rootNode, nodeKey10);
+            binaryTree.AppendLeftNode(nodeKey12, nodeKey7);
+            binaryTree.AppendRightNode(nodeKey12, nodeKey4);
+            binaryTree.AppendLeftNode(nodeKey10, nodeKey2);
+            binaryTree.AppendRightNode(nodeKey10, nodeKey21);
+            binaryTree.AppendLeftNode(nodeKey4, nodeKey5);
+            binaryTree.AppendLeftNode(nodeKey5, nodeKey15);
+            binaryTree.AppendRightNode(nodeKey5, nodeKey14);
         }
 
         [Test]

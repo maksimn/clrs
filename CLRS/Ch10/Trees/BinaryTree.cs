@@ -4,9 +4,18 @@ namespace Books.CLRS.Ch10.Trees {
     public class BinaryTree {
         private BinaryTreeNode _root;
 
-        public BinaryTreeNode CreateRoot(int key, object value = null) {
-            _root = new BinaryTreeNode(key, value);
-            return _root;
+        public BinaryTree(BinaryTreeNode rootNode) {
+            _root = rootNode;
+        }
+
+        public void AppendLeftNode(BinaryTreeNode node, BinaryTreeNode nodeToAppend) {
+            nodeToAppend.Parent = node;
+            node.Left = nodeToAppend;
+        }
+
+        public void AppendRightNode(BinaryTreeNode node, BinaryTreeNode nodeToAppend) {
+            nodeToAppend.Parent = node;
+            node.Right = nodeToAppend;
         }
 
         public void TraverseRecursive(Action<BinaryTreeNode> actionForNode) {

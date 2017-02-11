@@ -6,21 +6,9 @@
         public BinaryTreeNode Right { get; set; }
         public object Value { get; set; }
 
-        public BinaryTreeNode(int key, object value = null) {
+        public BinaryTreeNode(int key, object value) {
             Key = key;
             Value = value;
-        }
-
-        public BinaryTreeNode AppendLeftNode(int key, object value = null) {
-            Left = new BinaryTreeNode(key, value);
-            Left.Parent = this;
-            return Left;
-        }
-
-        public BinaryTreeNode AppendRightNode(int key, object value = null) {
-            Right = new BinaryTreeNode(key, value);
-            Right.Parent = this;
-            return Right;
         }
     }
 }
