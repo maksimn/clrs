@@ -8,8 +8,9 @@ namespace Books.CLRS.Ch10.Trees.Tests {
     class BinaryTreeTests {
         private BinaryTree binaryTree;
 
-        [SetUp]
-        public void Setup() {
+        private List<BinaryTreeNode> nodeList;
+
+        public void InitBinaryTree() {
             // Создать дерево с 10-ю элементами
             //              key = 18 
             //              /      \
@@ -41,14 +42,36 @@ namespace Books.CLRS.Ch10.Trees.Tests {
             binaryTree.AppendLeftNode(nodeKey4, nodeKey5);
             binaryTree.AppendLeftNode(nodeKey5, nodeKey15);
             binaryTree.AppendRightNode(nodeKey5, nodeKey14);
+
+            nodeList = new List<BinaryTreeNode>();
         }
 
         [Test]
         public void TraverseRecursive_AllBinTreeElementsTraversed() {
-            var nodeList = new List<BinaryTreeNode>();
+            InitBinaryTree();
 
             binaryTree.TraverseRecursive(node => nodeList.Add(node));
 
+            BinaryTreeAssertions();
+        }
+
+        [Test]
+        public void TraverseRecursive_actionParameterIsNull_ThrowsException() {
+            InitBinaryTree();
+
+            Assert.Catch<ArgumentException>(() => binaryTree.TraverseRecursive(null));
+        }
+
+        [Test]
+        public void TraverseUsingStackNonRecursive() {
+            InitBinaryTree();
+
+            binaryTree.TraverseUsingStackNonRecursive(node => nodeList.Add(node));
+
+            BinaryTreeAssertions();
+        }
+
+        private void BinaryTreeAssertions() {
             Assert.AreEqual(10, nodeList.Count);
             Assert.IsTrue(nodeList.Exists(node => node.Key == 18));
             Assert.IsTrue(nodeList.Exists(node => node.Key == 12));
@@ -60,11 +83,6 @@ namespace Books.CLRS.Ch10.Trees.Tests {
             Assert.IsTrue(nodeList.Exists(node => node.Key == 5));
             Assert.IsTrue(nodeList.Exists(node => node.Key == 15));
             Assert.IsTrue(nodeList.Exists(node => node.Key == 14));
-        }
-
-        [Test]
-        public void TraverseRecursive_actionParameterIsNull_ThrowsException() {
-            Assert.Catch<ArgumentException>(() => binaryTree.TraverseRecursive(null));
         }
     }
 }

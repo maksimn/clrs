@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Books.CLRS.Ch10.Trees {
     public class BinaryTree {
@@ -37,6 +38,29 @@ namespace Books.CLRS.Ch10.Trees {
             }
             if (node.Right != null) {
                 TraverseRecursive(node.Right, actionForNode);
+            }
+        }
+
+        public void TraverseUsingStackNonRecursive(Action<BinaryTreeNode> actionForNode) {
+            var node = _root;
+            var stack = new Stack<BinaryTreeNode>();
+
+            while (node != null) {
+                stack.Push(node);
+                node = node.Left;
+            }
+
+            while (stack.Count > 0) {
+                node = stack.Pop();
+                actionForNode(node);
+
+                if (node.Right != null) {
+                    node = node.Right;
+                    while (node != null) {
+                        stack.Push(node);
+                        node = node.Left;
+                    }
+                }
             }
         }
     }
