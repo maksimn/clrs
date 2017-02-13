@@ -43,19 +43,24 @@ namespace Books.CLRS.Ch10.Trees {
 
         public void TraverseUsingStackNonRecursive(Action<BinaryTreeNode> actionForNode) {
             var node = _root;
+			//keep the nodes in the path that are waiting to be visited
             var stack = new Stack<BinaryTreeNode>();
 
+			//first node to be visited will be the left one
             while (node != null) {
                 stack.Push(node);
                 node = node.Left;
             }
 
+			// traverse the tree
             while (stack.Count > 0) {
+			    // visit the stack top node
                 node = stack.Pop();
                 actionForNode(node);
 
                 if (node.Right != null) {
                     node = node.Right;
+					// the next node to be visited is the leftmost
                     while (node != null) {
                         stack.Push(node);
                         node = node.Left;
