@@ -44,8 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLRS\Ch10_ElementaryDataStructures\Trees\ArbitraryTree.cs" />
+    <Compile Include="CLRS\Ch10_ElementaryDataStructures\Trees\ArbitraryTreeNode.cs" />
     <Compile Include="CLRS\Ch10_ElementaryDataStructures\Trees\BinaryTree.cs" />
     <Compile Include="CLRS\Ch10_ElementaryDataStructures\Trees\BinaryTreeNode.cs" />
+    <Compile Include="CLRS\Ch10_ElementaryDataStructures\Trees\Tests\ArbitraryTreeTests.cs" />
     <Compile Include="CLRS\Ch10_ElementaryDataStructures\Trees\Tests\BinaryTreeTests.cs" />
     <Compile Include="CLRS\Ch22_ElementaryAlgorithmsForGraphs\Algorithms.cs" />
     <Compile Include="CLRS\Ch22_ElementaryAlgorithmsForGraphs\GraphAsAdjacencyList.cs" />
