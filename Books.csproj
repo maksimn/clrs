@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLRS\Ch10_ElementaryDataStructures\StacksNQueues\Queue.cs" />
     <Compile Include="CLRS\Ch10_ElementaryDataStructures\StacksNQueues\Stack.cs" />
+    <Compile Include="CLRS\Ch10_ElementaryDataStructures\StacksNQueues\Tests\QueueTests.cs" />
     <Compile Include="CLRS\Ch10_ElementaryDataStructures\StacksNQueues\Tests\StackTests.cs" />
     <Compile Include="CLRS\Ch10_ElementaryDataStructures\Trees\ArbitraryTree.cs" />
     <Compile Include="CLRS\Ch10_ElementaryDataStructures\Trees\ArbitraryTreeNode.cs" />
