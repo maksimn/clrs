@@ -13,6 +13,10 @@ namespace Books.CLRS.Ch10_ElementaryDataStructures.StacksNQueues {
         }
 
         public T Dequeue() {
+            if (head == tail) {
+                throw new InvalidOperationException();
+            }
+
             var x = array[head];
             array[head] = default(T);
             head++;
