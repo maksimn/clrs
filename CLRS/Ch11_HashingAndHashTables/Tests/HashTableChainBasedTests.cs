@@ -4,7 +4,7 @@ namespace Books.CLRS.Ch11_HashingAndHashTables.Tests {
     class HashTableChainBasedTests {
         [Test]
         public void HashTableTest1() {
-            var hashTable = new HashTableChainBased<string>(10);
+            var hashTable = new HashTableChainBased<string>(17);
 
             hashTable.Insert("Amanda");
             hashTable.Insert("Elizabeth");
