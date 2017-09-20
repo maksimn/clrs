@@ -71,7 +71,6 @@ namespace Books.CLRS.Ch12_BinarySearchTrees {
 
             if (v != null)
                 v.Parent = u.Parent;
-
         }
     }
 }

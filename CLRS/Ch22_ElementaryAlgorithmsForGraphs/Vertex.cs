@@ -2,10 +2,10 @@
     enum VertexColor { White, Gray, Black }
 
     class Vertex {
-        // Индекс вершины в общем списке вершин
-        public int Index { get; set; }
+        public int Key { get; set; }
         public VertexColor Color { get; set; }
         public Vertex Predecessor { get; set; }
         public int Distance { get; set; }
+        public Vertex[] AdjacencyList { get; set; }
     }
 }

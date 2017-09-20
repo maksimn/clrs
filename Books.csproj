@@ -60,9 +60,8 @@
     <Compile Include="CLRS\Ch11_HashingAndHashTables\Tests\HashTableChainBasedTests.cs" />
     <Compile Include="CLRS\Ch12_BinarySearchTrees\BinarySearchTree.cs" />
     <Compile Include="CLRS\Ch12_BinarySearchTrees\Tests\BinarySearchTreeTests.cs" />
-    <Compile Include="CLRS\Ch22_ElementaryAlgorithmsForGraphs\Algorithms.cs" />
-    <Compile Include="CLRS\Ch22_ElementaryAlgorithmsForGraphs\GraphAsAdjacencyList.cs" />
-    <Compile Include="CLRS\Ch22_ElementaryAlgorithmsForGraphs\Tests\BreadthFirstSearchTests.cs" />
+    <Compile Include="CLRS\Ch22_ElementaryAlgorithmsForGraphs\Graph.cs" />
+    <Compile Include="CLRS\Ch22_ElementaryAlgorithmsForGraphs\Tests\GraphTests.cs" />
     <Compile Include="CLRS\Ch22_ElementaryAlgorithmsForGraphs\Vertex.cs" />
     <Compile Include="CLRS\Ch27_MultithreadedAlgorithms\DynamicMultithreadingBasics\SimpleFibonacci.cs" />
     <Compile Include="CLRS\Ch27_MultithreadedAlgorithms\DynamicMultithreadingBasics\Tests\SimpleFibonacciTests.cs" />

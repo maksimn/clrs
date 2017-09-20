@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 
 namespace Books.CLRS.Ch22_ElementaryAlgorithmsForGraphs {
-    class Algorithms {
-        public static void BreadthFirstSearch(GraphAsAdjacencyList graph, Vertex source) {
-            foreach(var vertex in graph.Vertices) {
+    class Graph {
+        public Vertex[] Vertices { get; set; }
+
+        public void BreadthFirstSearch(Vertex source) {
+            foreach (var vertex in Vertices) {
                 vertex.Color = VertexColor.White;
                 vertex.Distance = -1;
                 vertex.Predecessor = null;
@@ -17,7 +19,7 @@ namespace Books.CLRS.Ch22_ElementaryAlgorithmsForGraphs {
             queue.Enqueue(source);
             while (queue.Count > 0) {
                 var u = queue.Dequeue();
-                foreach (var v in graph.AdjacencyList[u.Index]) {
+                foreach (var v in u.AdjacencyList) {
                     if (v.Color == VertexColor.White) {
                         v.Color = VertexColor.Gray;
                         v.Distance = u.Distance + 1;
