@@ -30,5 +30,33 @@ namespace Books.CLRS.Ch22_ElementaryAlgorithmsForGraphs {
                 u.Color = VertexColor.Black;
             }
         }
+
+        public int time;
+
+        public void DepthFirstSearch() {
+            foreach (var v in Vertices) {
+                v.Color = VertexColor.White;
+                v.Predecessor = null;
+            }
+            time = 0;
+            foreach (var u in Vertices) {
+                if (u.Color == VertexColor.White) {
+                    DFSVisit(u);
+                }
+            }
+        }
+
+        private void DFSVisit(Vertex vertex) {
+            vertex.TimeD = ++time;
+            vertex.Color = VertexColor.Gray;
+            foreach (var v in vertex.AdjacencyList) {
+                if (v.Color == VertexColor.White) {
+                    v.Predecessor = vertex;
+                    DFSVisit(v);
+                }
+            }
+            vertex.Color = VertexColor.Black;
+            vertex.TimeF = ++time;
+        }
     }
 }

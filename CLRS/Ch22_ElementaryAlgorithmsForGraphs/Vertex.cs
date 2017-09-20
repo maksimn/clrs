@@ -7,5 +7,7 @@
         public Vertex Predecessor { get; set; }
         public int Distance { get; set; }
         public Vertex[] AdjacencyList { get; set; }
+        public int TimeD { get; set; } // время открытия вершины
+        public int TimeF { get; set; } // время завершения работы с вершиной 
     }
 }
