@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLRS\Ch06_HeapSort\HeapSortExtensions.cs" />
+    <Compile Include="CLRS\Ch06_HeapSort\Tests\HeapSortTests.cs" />
     <Compile Include="CLRS\Ch10_ElementaryDataStructures\LinkedLists\LinkedList.cs" />
     <Compile Include="CLRS\Ch10_ElementaryDataStructures\LinkedLists\ListNode.cs" />
     <Compile Include="CLRS\Ch10_ElementaryDataStructures\StacksNQueues\Queue.cs" />
